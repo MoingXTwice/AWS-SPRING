@@ -9,6 +9,7 @@ spring:
     include: oauth
 
 
+
   jpa:
     hibernate:
       ddl-auto: create
@@ -17,6 +18,11 @@ spring:
 #            show_sql: true
         format_sql: true
         default_batch_fetch_size: 100
+
+  session:
+    store-type: jdbc
+#    jdbc:
+#      initialize-schema: always
 
 logging.level:
     org.hibernate.SQL: debug
