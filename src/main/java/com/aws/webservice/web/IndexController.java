@@ -3,6 +3,7 @@ package com.aws.webservice.web;
 import com.aws.webservice.config.auth.LoginUser;
 import com.aws.webservice.config.auth.dto.SessionUser;
 import com.aws.webservice.service.PostsService;
+import com.aws.webservice.service.UserService;
 import com.aws.webservice.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -17,12 +18,14 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     private final PostsService postsService;
+    private final UserService userService;
     private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
 
         model.addAttribute("posts", postsService.findAllDesc());
+        model.addAttribute("users", userService.findAll());
 
         if (user != null) {
             model.addAttribute("userName", user.getName());

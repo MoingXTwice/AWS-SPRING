@@ -37,6 +37,28 @@
         {{/posts}}
         </tbody>
     </table>
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>이름</th>
+            <th>이메일</th>
+            <th>생성날짜</th>
+            <th>수정날짜</th>
+            <th>role</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#users}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{email}}</td>
+                <td>{{createDate}}</td>
+                <td>{{modifiedDate}}</td>
+                <td>{{role}}</td>
+            </tr>
+        {{/users}}
+        </tbody>
+    </table>
 </div>
 
 {{>layout/footer}}
