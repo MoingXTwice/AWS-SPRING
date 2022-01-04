@@ -11,10 +11,11 @@ cache:
   directories:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
+
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r webservice-practice
+  - zip -r awsweb
   - mkdir -p deploy
   - mv webservice-practice.zip deploy/webservice-practice.zip
 
